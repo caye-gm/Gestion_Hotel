@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="css/Model.css" rel="stylesheet" type="text/css">
@@ -14,103 +15,150 @@
   <title>Hotel</title>
 </head>
 
-<body class="backgroundLog">
-
-  <div class="container-fluid">
-
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#!"><img src="img/logo.png" alt="Logo" style="width:40px"></a>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#!">Iniciar Sesion <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!"></a>
-          </li>
-        </ul>
-      </div>
-    </nav> 
-  </div>
-
-  <br><br>
+<body class="backgroundPan">
   
-  
-  <div class="row ">
+    <div class="container-fluid">
 
-    <!-- Menu principal -->
-    <div class="col-sm-4">
-
-
+     <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+            <a class="navbar-brand" href="#"><img src="img/logo.png" width="50px" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav sesion">
+                    <a class="nav-item nav-link active" href="Index.html">Inicio</a>
+                    <a class="nav-item nav-link " href="html/reserva.html">Reservar</a>
+                    <a class="nav-item nav-link " href="html/login.html">Iniciar sesión</a>
+                    <a class="nav-item nav-link float-right" href="html/register.html">Registrarse</a>
+                </div>
+            </div>
+      </nav>
 
     </div>
-    <div class="col-sm-4 ">
-      <div class="card">
-        <div class="text-center">
-          <img src="img/logo.png" alt="Logo" style="width:120px">
-        </div>
-        <form>
-          <div class="form-group">
-            <label for="Usuario">Usuario:</label>
-            <input type="Usuario" class="form-control" placeholder="Introduce el usuario" id="usuario" required>
+    <br>
+      <div class="container cardBg">
+        <div class="row">
+          <div class="col-sm-1">
+     
           </div>
-          <div class="form-group">
-            <label for="pass">Contraseña:</label>
-            <input type="password" class="form-control" placeholder="Contraseña" id="pass" required>
+          <div class="col-sm-10">
+            <h2 class="text-center">Hotel</h2>
+            <hr>
+            <h3 class="text-center">Salesianos de Triana</h3>
+            
+            <p>El Hotel Córdoba Center está situado en la denominada “Manzana de Oro”, a escasa distancia de la estación de ferrocarril (AVE), en plena zona de negocios, ocio y comercio, y con rápido acceso al casco histórico de la ciudad de la Mezquita.</p>
+
+            <hr>
+
+            <div class="container">
+              <div class="row ">
+                <div class="col-sm-6">
+                  <!-- Content -->
+        
+                <img src="img/salesianos1.jpg" width="100%" height="220" alt="fachada del hotel salesiano">
+
+
+                </div>
+                <!-- fin del Content -->
+                
+                <div class="col-sm-6">
+                  <!-- contenido -->
+
+                  <p>Las amplias habitaciones y suites del hotel están equipadas para satisfacer la demanda de nuestros clientes. En la piscina panorámica, situada en la terraza, y de uso exclusivo para los clientes, usted podrá relajarse a la vez que disfruta de maravillosas vistas de la ciudad. La oferta se complementa con el Fitness Center, terraza solarium, jacuzzi al aire libre, piano bar y cafetería, así como el más moderno y completo centro de convenciones.</p>
+                    <!-- fin del Content -->
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-sm-2"> 
+                  <i class="fas fa-wifi" style="font-size: 45px;"></i>
+                  <p class="text-center">wifi</p>
+                </div>
+                <div class="col-sm-2"> 
+                  <i class="fas fa-swimming-pool" style="font-size: 45px;"></i>
+                  <p class="text-center">Piscina</p>
+                </div>
+                <div class="col-sm-2"> 
+                  <i class="fas fa-utensils" style="font-size: 45px;"></i>
+                  <p class="text-center">Restaurante</p>
+                </div>
+                <div class="col-sm-2"> 
+                  <i class="fas fa-parking" style="font-size: 45px;"></i>
+                  <p class="text-center">Parking</p>
+                </div>
+                <div class="col-sm-2"> 
+                  <i class="fas fa-dumbbell" style="font-size: 45px;"></i>
+                  <p class="text-center">Gimnasio</p>
+                </div>
+                <div class="col-sm-2"> 
+                  <i class="fab fa-accessible-icon" style="font-size: 45px;"></i>
+                  <p class="text-center">Acceso minusválido</p>
+                </div>
+              </div>
+            </div>    
+
+            <img src="img/piscina.png" alt="piscina salesiana" width="100%">
+
           </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-sm-4">
+
+              </div>
+              <div class="col-sm-4 text-center">
+                <br>
+                <button class="btn btn-primary" ><a href="html/reserva.html">Crear Reservar</button></a>
+                <br>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                
+              </div>
+              <div class="col-sm-4">
+               
+              </div>
+            </div>  
           </div>
-        </form>
-        <span class="text-center">¿Aún no estas registrado? Pulse <a href="html/rUsuario.html">aqui</a>.</span>
+
+          <div class="col-sm-2">
+    
+          </div>
+
+          <div class="space"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+  <!-- Pie -->
+  <footer class="float-left container-fluid">
+
+    <div class="row">
+      <div class="col-sm-3">
+      <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
+      </div>
+      <div class="col-sm-6 ">
+        <p class="text-center" id="clk"></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="html/QuienSomos.html">Quienes somos</a></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Política de datos</a></p>
+      </div>  
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Aviso legal</a></p>
       </div>
       
-    </div>
+    </div> 
+  </footer>
+    
+ 
 
-
-    <div class="col-sm-4">
-
-
-
-    </div>
-
-  </div>
-
-  <br>
-  <!-- Pie -->
-<footer class="float-left container-fluid">
-
-<div class="row">
-  <div class="col-sm-3">
-  <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
-  </div>
-  <div class="col-sm-6 text-center">
-    <p id="clk"></p>
-  </div>
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Quienes somos</a></p>
-  </div>
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Política de datos</a></p>
-  </div>  
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Aviso legal</a></p>
-  </div>
-  
-</div> 
-
-    </footer>
-
-
-
-  </div>
-  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -123,7 +171,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
- 
+  
 
 </body>
 

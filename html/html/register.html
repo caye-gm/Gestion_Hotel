@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="../css/Model.css" rel="stylesheet" type="text/css">
-  <script src="js/reloj.js"></script>
+  <script src="../js/reloj.js"></script>
   <title>Hotel</title>
 </head>
 
@@ -18,25 +18,20 @@
 
   <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+      <a class="navbar-brand" href="#"><img src="../img/logo.png" width="50px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#!"><img src="../img/logo.png" alt="Logo" style="width:40px"></a>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Iniciar Sesion <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!"></a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav sesion">
+              <a class="nav-item nav-link " href="../Index.html">Inicio</a>
+              <a class="nav-item nav-link" href="login.html">Iniciar sesión</a>
+              <a class="nav-item nav-link active" href="register.html">Registrarse</a>
+          </div>
       </div>
-    </nav> 
+  </nav>
+  
   </div>
 
   <br><br>
@@ -96,28 +91,27 @@
 
   <br>
   <!-- Pie -->
-<footer class="float-left container-fluid">
+  <footer class="float-left container-fluid">
 
-<div class="row">
-  <div class="col-sm-3">
-  <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
-  </div>
-  <div class="col-sm-6 text-center">
-    <p id="clk"></p>
-  </div>
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Quienes somos</a></p>
-  </div>
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Política de datos</a></p>
-  </div>  
-  <div class="col-sm-1">
-    <p class=" d-block"><a href="#">Aviso legal</a></p>
-  </div>
-  
-</div> 
-
-    </footer>
+    <div class="row">
+      <div class="col-sm-3">
+      <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
+      </div>
+      <div class="col-sm-6 ">
+        <p class="text-center" id="clk"></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="QuienSomos.html">Quienes somos</a></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Política de datos</a></p>
+      </div>  
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Aviso legal</a></p>
+      </div>
+      
+      </div> 
+  </footer>
 
 
 

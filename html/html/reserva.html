@@ -19,7 +19,7 @@
   
     <div class="container-fluid">
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-blue " style="width:100%">
         <a class="navbar-brand" href="#"><img src="../img/logo.png" width="50px" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,8 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav sesion">
                 <a class="nav-item nav-link" href="../Index.html">Inicio</a>
+                <a class="nav-item nav-link active" href="html/reserva.html" >Reservar</a>
+                <a class="nav-item nav-link " >Iniciar sesión</a>
                 <a class="nav-item nav-link ">Registrarse</a>
-                <a class="nav-item nav-link">Iniciar sesión</a>
+                
             </div>
         </div>
     </nav>
@@ -38,54 +40,65 @@
     <br>
 
   
-          
-          
-
-
       <div class="container cardBg">
         <div class="row">
           <div class="col-sm-1">
      
           </div>
           <div class="col-sm-10">
-            <h3>Contacto</h3>
+            <h3>Reservas</h3>
             <hr>
             <h5>Hotel Salesianos Triana:</h5>
             
             <div class="container">
-              <div class="row ">
-                <div class="col-sm-7">
-                  <!-- Content -->
-                <br>
-                <p><i class="fa fa-phone"></i> Telefono: +34 954 33 14 88</p>
-                <p><i class="fa fa-map-marker-alt"></i> Dirección:<a href="google.com/maps/place/Salesianos+Triana/@37.3803587,-6.0121374,15z/data=!4m5!3m4!1s0x0:0x448eb556f306897f!8m2!3d37.3803587!4d-6.0075884"> Calle Condes de Bustillo, N 17, 41010 Sevilla</p></a>
-                <p><i class="fa fa-envelope"></i> Correo electronico: reservas@hotelSalesianos.com</p>
+              <div class="row">
+                <div class="col-sm-12 card">
+                    <form>
+                    <div class="row ">
+                    <div class="col-sm-4"> 
+                        <div class="form-group ">
+                          <label for="fecha_entr">Fecha de Entrada:</label>
+                          <input type="date" class="form-control"  id="fecha_entr"  placeholder="Fecha de entrada">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <div class="form-group">
+                            <label for="fecha_sal">Fecha de Salida:</label>
+                            <input type="date" class="form-control" id="fecha_sal"  placeholder="Fecha de salida">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group" >
+                            <label for="hab">Tipo de Habitación:</label>
+                            <select id="hab" class="form-control">
+                              <option selected>Individual</option>
+                              <option>Doble</option>
+                              <option>Suite</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="row ">
+                        
+                        <div class="col-sm-12 ml-3" >             
+                            <button type="submit" class="btn btn-primary">Crear Reserva</button>
+                        </div>  
+                    </div>  
+                      </form>
+                    
                 </div>
-                <!-- fin del Content -->
-                <div class="col-sm-1">
-                  
-                </div>
-                <div class="col-sm-4">
-                  <!-- Content -->
-                  
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12681.602190090953!2d-6.012137426489265!3d37.380358700000016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x448eb556f306897f!2sSalesianos%20Triana!5e0!3m2!1ses!2ses!4v1588701629287!5m2!1ses!2ses" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  
-                  <!-- fin del Content -->
-                </div>
-              </div>
+               </div>
             </div>
-    
-          </div>
-          <div class="col-sm-2">
-    
+          <div class="col-sm-1">
           </div>
 
+          
 
     </div>
   </div>
 </div>
 </div>
 
+<div class="space"></div>
 
 
 
