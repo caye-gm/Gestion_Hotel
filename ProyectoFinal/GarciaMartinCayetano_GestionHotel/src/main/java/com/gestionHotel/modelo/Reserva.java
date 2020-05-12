@@ -13,11 +13,10 @@ import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+@Entity
 @Data
 @NoArgsConstructor
 
-@Entity
 public class Reserva {
 	@Id@GeneratedValue
 	private long id;

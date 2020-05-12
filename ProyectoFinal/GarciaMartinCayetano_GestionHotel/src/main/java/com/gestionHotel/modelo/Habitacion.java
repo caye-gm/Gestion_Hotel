@@ -13,9 +13,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+@Entity
 @Data
 @NoArgsConstructor
-@Entity
 public  class Habitacion {
 	@Id@GeneratedValue
 	private long id;
@@ -24,7 +24,7 @@ public  class Habitacion {
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@ManyToMany(mappedBy="reservas",fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy="habitaciones",fetch = FetchType.EAGER)
 	private List<Reserva> reservas = new ArrayList<>();
 	
 	
