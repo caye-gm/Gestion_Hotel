@@ -9,8 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-
-
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -24,24 +23,31 @@ public class Actividad {
 
 	@Id @GeneratedValue
 	private long id;
+	private LocalDate horaInicio;
+	
+	@ManyToOne
+	private PlantillaActividades pa;
 	
 	
-	private String nombre;
-	private LocalDate horaInicio,duracion;
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(mappedBy="actividades",fetch = FetchType.EAGER)
 	private List<Usuario> usuarios = new ArrayList<Usuario>();
 
-	public Actividad(String nombre, LocalDate horaInicio, LocalDate duracion, List<Usuario> usuarios) {
+	public Actividad(LocalDate horaInicio, List<Usuario> usuarios) {
 		super();
-		this.nombre = nombre;
 		this.horaInicio = horaInicio;
-		this.duracion = duracion;
 		this.usuarios = usuarios;
 	}
 
+	public Actividad(LocalDate horaInicio, PlantillaActividades pa, List<Usuario> usuarios) {
+		super();
+		this.horaInicio = horaInicio;
+		this.pa = pa;
+		this.usuarios = usuarios;
+	}
+	
 	
 	
 	

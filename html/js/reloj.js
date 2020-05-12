@@ -1,1 +1,0 @@
-setInterval(function(){d=new Date(); h=d.getHours(); m=d.getMinutes(); s=d.getSeconds(); document.getElementById("clk").textContent=[h,m,s].map(function(a){return a<10?'0'+a:a}).join(':');}, 1000);
