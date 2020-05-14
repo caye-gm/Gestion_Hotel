@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <!-- Required meta tags -->
@@ -19,7 +19,7 @@
     <div class="container-fluid">
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo de la web" width="50px"></a>
+      <a class="navbar-brand" href="/"><img src="img/logo.png" alt="logo de la web" width="50px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -92,7 +92,7 @@
                   <label for="pass">Duración:</label>
                   <input type="time" class="form-control" placeholder="duracion de la actividad" id="pass" required>
 
-                
+                	<br>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Crear Actividad</button>
                     <button type="reset" class="btn btn-primary">Cancelar</button>
@@ -125,7 +125,7 @@
                 </div>
                 <form>
                   <label for="dele-act">ID actividad:</label>
-                  <input type="text" class="form-control" placeholder="ID de la actividad" id="dele-act">
+                  <input type="text" class="form-control" placeholder="ID de la actividad" id="dele-act" required>
                   <div class="space-sm"> </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Inhabilitar</button>
@@ -141,16 +141,16 @@
                 </div>
                 <form>
                   <label for="act-act">ID:</label>
-                  <input type="Usuario" class="form-control" placeholder="Introduce la id de la actividad" id="act-act">
+                  <input type="Usuario" class="form-control" placeholder="Introduce la id de la actividad" id="act-act" required>
                   
                   <label for="repe">Repeticiones:</label>
-                  <input type="number" class="form-control" placeholder="Introduce un valor" id="repe">
+                  <input type="number" class="form-control" placeholder="Introduce un valor" id="repe" required>
 
                   <label for="fechas">Fecha:</label>
-                  <input type="date" class="form-control" placeholder="Introduce la id de la actividad" id="fechas">
-
+                  <input type="datetime-local" class="form-control" placeholder="Introduce la id de la actividad" id="fechas" required>
+					<br>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Borrar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                     <button type="submit" class="btn btn-primary">Cancelar</button>
                   </div>
                 </form>
@@ -205,7 +205,7 @@
         <p class="text-center" id="clk"></p>
       </div>
       <div class="col-sm-1">
-        <p class=" d-block"><a href="QuienSomos.html">Quienes somos</a></p>
+        <p class=" d-block"><a href="/contacto">Quienes somos</a></p>
       </div>
       <div class="col-sm-1">
         <p class=" d-block"><a href="#">Política de datos</a></p>
