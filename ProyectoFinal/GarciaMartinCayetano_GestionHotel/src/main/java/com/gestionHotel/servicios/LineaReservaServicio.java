@@ -1,9 +1,7 @@
 package com.gestionHotel.servicios;
 
-import java.util.List;
 
 import org.springframework.stereotype.Service;
-
 import com.gestionHotel.modelo.LineaReserva;
 import com.gestionHotel.repositorios.*;
 import com.gestionHotel.servicios.base.BaseService;
