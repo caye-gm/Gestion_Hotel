@@ -14,11 +14,11 @@
   <title>Hotel</title>
 </head>
 
-<body class="backgroundPan">
-  
-    <div class="container-fluid">
+<body class="backgroundLog">
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+  <div class="container-fluid">
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
       <a class="navbar-brand" href="/"><img src="img/logo.png" alt="logo de la web" width="50px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,19 +27,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="/">Inicio </span></a>
+            <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/reserva">Reservar</a>
           </li>
           
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="Gestion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Gestionar
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
               <a class="dropdown-item" href="/gestion-usuarios">Usuarios</a>
-              <a class="dropdown-item" href="/gestion-reservas">Reservas<span class="sr-only"></a>
+              <a class="dropdown-item" href="/gestion-reservas">Reservas</a>
               <a class="dropdown-item" href="/gestion-habitaciones">Habitaciones</a>
               <a class="dropdown-item" href="/gestion-actividades">Actividades</a>
             </div>
@@ -47,11 +47,11 @@
 
         </ul>
         <ul class="navbar-nav btn-group" >
-        <li class="nav-item dropdown " >
+        <li class="nav-item dropdown active" >
           <a  class="nav-link dropdown-toggle" href="#" id="mi cuenta" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Mi Cuenta
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/login">Iniciar Sesion</a>
             <a class="dropdown-item" href="/registro">Registro</a>
           </div>
@@ -60,69 +60,71 @@
 
       </div>
     </nav>
-
-    </div>
-
-    <br>
-
-  <div class="container cardBg">
-    <div class="row">
-      <div class="col-sm-2">
- 
-      </div>
-      <div class="col-sm-8">
-        <h2 class="text-center">Gestor de Reservas</h2>
-        <hr>
-        <div class="container">
-          <div class="row ">
-            <div class="col-sm-12">
-              <!-- Content -->
-              <h3>Borrar reserva</h3>
-
-              <div class="card">
-                <div>
-                </div>
-                <form>
-
-                  <label for="id">ID de la reserva:</label>
-                  <input type="text" class="form-control" placeholder="Introduce el ID de la reserva" id="id" required>
-
-                  <div class="text-center space-sm">
-                    <button type="submit" class="btn btn-primary">Borrar reserva</button>
-                    <button type="reset" class="btn btn-primary">Cancelar</button>
-                  </div>
-                </form>
-
-              </div>
-
-            </div>
-        </div>
-
-        <div class="space-sm"></div>
-
-            <div class="row ">
-              <div class="col-sm-12">
-              <h3>Lista de Reservas</h3>
-
-              <div class="card">
-                
-              </div>
-             </div>
-            </div>
-
-    
-              <!-- fin del Content -->
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-sm-2">
-
-      </div>
-    </div>
+  
   </div>
 
+  <br><br>
+  
+  
+  <div class="row ">
+
+    <!-- Menu principal -->
+    <div class="col-sm-4">
+
+
+
+    </div>
+    <div class="col-sm-4 ">
+      <div class="card">
+        <div class="text-center">
+          <img src="../img/logo.png" alt="Logo" style="width:120px">
+        </div>
+        
+        
+        <form method="POST" action="#" th:action="@{/registro}">
+          <div class="form-group">
+           
+            <label for="Usuario">Usuario:</label>
+            <input type="text" class="form-control" placeholder="Introduce el usuario" id="username" required>
+            
+             <label for="pass">Contraseña:</label>
+            <input type="password" class="form-control" placeholder="Contraseña" id="password" required>
+            
+            
+            <label for="DNI">DNI:</label>
+            <input type="text" class="form-control" placeholder="Introduce el DNI" id="dni" required>
+            
+            
+            <label for="Email">Email:</label>
+            <input type="Email" class="form-control" placeholder="Introduce el email" id="email" required>
+            
+            <label for="phone">Telefono:</label>
+            <input type="text" class="form-control" placeholder="Introduce el telefono" id="telefono" required>
+
+           
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Crear Usuario</button>
+            <button type="reset" class="btn btn-primary">Cancelar</button>
+          </div>
+        </form>
+        
+        
+        
+
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+
+
+
+    </div>
+
+  </div>
+
+  <br>
   <!-- Pie -->
   <footer class="float-left container-fluid">
 
@@ -145,12 +147,11 @@
       
       </div> 
   </footer>
-    
- 
 
 
 
-  
+  </div>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -163,7 +164,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
+ 
 
 </body>
 

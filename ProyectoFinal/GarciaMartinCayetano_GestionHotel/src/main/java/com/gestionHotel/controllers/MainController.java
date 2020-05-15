@@ -1,13 +1,19 @@
 package com.gestionHotel.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.gestionHotel.modelo.Usuario;
 
 
 @Controller
 public class MainController {
 
-	
+	/*
+	 * Estos controller son de usuarios sin permisos
+	 * 
+	 */
 	@GetMapping("/")
 	public String Inicio() {
 		return "index";
@@ -17,32 +23,17 @@ public class MainController {
 		return "login";
 	}
 	@GetMapping("/registro")
-	public String registro() {
-		return "register";
+	public String registro(Model u) {
+		u.addAttribute("usuario", new Usuario());
+		return "registro";
 	}
 	@GetMapping("/contacto")
 	public String contacto() {
-		return "QuienSomos";
+		return "contacto";
 	}
 	@GetMapping("/reserva")
 	public String reserva() {
 		return "reserva";
-	}
-	@GetMapping("/gestion-habitaciones")
-	public String gestionhabitaciones() {
-		return "gHabitaciones";
-	}
-	@GetMapping("/gestion-reservas")
-	public String gestionreservas() {
-		return "gReservas";
-	}
-	@GetMapping("/gestion-usuarios")
-	public String gestionusuarios() {
-		return "gUsuario";
-	}
-	@GetMapping("/gestion-actividades")
-	public String gestionactividades() {
-		return "gActividades";
 	}
 	
 	
