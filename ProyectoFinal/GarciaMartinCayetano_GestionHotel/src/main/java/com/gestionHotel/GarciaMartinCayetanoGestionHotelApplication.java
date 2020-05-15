@@ -4,11 +4,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import com.gestionHotel.modelo.Usuario;
-import com.gestionHotel.repositorios.UsuarioRepository;
 import com.gestionHotel.servicios.UsuarioServicio;
-import com.gestionHotel.servicios.base.BaseService;
+
 
 @SpringBootApplication
 public class GarciaMartinCayetanoGestionHotelApplication {
@@ -18,14 +17,14 @@ public class GarciaMartinCayetanoGestionHotelApplication {
 	}
 
 	@Bean
-	public CommandLineRunner init(UsuarioServicio servicio) {
+	public CommandLineRunner init(UsuarioServicio servicio,PasswordEncoder passwordEncoder) {
 		return args -> {
 			
 			Usuario u = new Usuario();
 			u.setAdmin(false);
-			u.setUsername("Luis Miguel");
+			u.setUsername("usuario");
 			u.setEmail("luismi.lopez@email.com");
-			u.setPassword("1234");
+			u.setPassword(passwordEncoder.encode("1234"));
 			
 			
 			
@@ -34,9 +33,9 @@ public class GarciaMartinCayetanoGestionHotelApplication {
 			
 			Usuario a = new Usuario();
 			a.setAdmin(true);
-			a.setUsername("Angel");
-			a.setEmail("angel.naranjo@email.com");
-			a.setPassword("1234");
+			a.setUsername("admin");
+			a.setEmail("cayetano@email.com");
+			a.setPassword(passwordEncoder.encode("admin"));
 			
 			servicio.save(a);
 			
