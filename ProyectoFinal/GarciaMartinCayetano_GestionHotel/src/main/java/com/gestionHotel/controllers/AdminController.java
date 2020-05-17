@@ -1,8 +1,14 @@
 package com.gestionHotel.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gestionHotel.modelo.Actividad;
+import com.gestionHotel.modelo.PlantillaActividades;
+import com.gestionHotel.modelo.Usuario;
 
 @Controller
 @RequestMapping("/admin")
@@ -21,11 +27,21 @@ public class AdminController {
 	public String gestionusuarios() {
 		return "/admin/gUsuario";
 	}
+	
+	
+	
 	@GetMapping("/gestion-actividades")
-	public String gestionactividades() {
+	public String gestionactividad(Model u) {
+		u.addAttribute("Actividades", new Actividad());
 		return "/admin/gActividades";
 	}
 	
+	@GetMapping("/gestion-actividades-plantilla")
+	public String gActP(Model u) {
+		u.addAttribute("PlantillaActividades", new PlantillaActividades());
+		
+		return "/admin/gActividadesPlantilla";
+	}
 
 }
 

@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,7 @@ public class Actividad {
 
 	@Id @GeneratedValue
 	private long id;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate horaInicio;
 	
 	@ManyToOne

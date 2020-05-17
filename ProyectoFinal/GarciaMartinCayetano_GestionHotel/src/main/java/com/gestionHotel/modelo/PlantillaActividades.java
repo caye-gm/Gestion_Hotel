@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data@NoArgsConstructor
@@ -14,6 +16,8 @@ public class PlantillaActividades {
 	@Id@GeneratedValue
 	private long id;
 	private String nombre,descripcion;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate duracion;
 	
 	

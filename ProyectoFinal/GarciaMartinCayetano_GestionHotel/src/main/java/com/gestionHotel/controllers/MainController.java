@@ -24,9 +24,10 @@ public class MainController {
 	}
 	@GetMapping("/registro")
 	public String registro(Model u) {
-		u.addAttribute("usuario", new Usuario());
-		return "registro";
+	u.addAttribute("usuario", new Usuario());
+	return "registro";
 	}
+	
 	@GetMapping("/contacto")
 	public String contacto() {
 		return "contacto";
