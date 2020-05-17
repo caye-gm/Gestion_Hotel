@@ -14,12 +14,15 @@ public class PlantillaActividadesController {
 
 	@Autowired
 	PlantillaActividadesServicio servicioPA;
+	
+	
 	@Autowired
 	ActividadServicio servicioA;
 	
 	
 	@PostMapping("/admin/gestion-actividades")
-	public String anyadira(@ModelAttribute("Actividades") Actividad u) {
+	public String anyadira(@ModelAttribute("Actividad") Actividad u) { 
+	
 	servicioA.save(u);
 	return "redirect:/admin/gestion-actividades";
 	}

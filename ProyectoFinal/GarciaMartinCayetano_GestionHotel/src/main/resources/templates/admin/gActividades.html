@@ -82,9 +82,13 @@
               <div class="card">
                 <div>
                 </div>
-                <form th:object="${Actividades}" method="POST" action="#" th:action="@{/admin/gestion-actividades}">
-                  <label for="act-act">ID:</label>
-                  <input type="Text" class="form-control" name="act-act" placeholder="Introduce la id de la actividad" id="act-act" th:field="*{id}" required>
+                <form th:object="${Actividad}" method="POST" action="#" th:action="@{/admin/gestion-actividades}">
+                
+                <div th:object="${id}">
+                <label for="pa">pa:</label>
+                  <input type="Text" class="form-control" name="pa" placeholder="Introduce la id de la actividad" id="pa" th:field="pa" required>
+                </div>
+                  
                   
                  <!--   <label for="repe">Repeticiones:</label>
                   <input type="number" class="form-control" placeholder="Introduce un valor" id="repe" required>

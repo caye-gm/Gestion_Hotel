@@ -32,7 +32,7 @@ public class AdminController {
 	
 	@GetMapping("/gestion-actividades")
 	public String gestionactividad(Model u) {
-		u.addAttribute("Actividades", new Actividad());
+		u.addAttribute("Actividad", new Actividad());	
 		return "/admin/gActividades";
 	}
 	
