@@ -92,16 +92,16 @@
                 		<th>DNI</th>
                 		<th>Email</th>
                 		<th>Telefono</th>
-                		
+                		<th>Admin</th>
                 </thead>
                 <tbody>
                 	<tr th:each="usuario : ${listaUsuario}">
                 		<td th:text="${usuario.id}">ID</td>
-                		<td th:text="${usuario.nombre}">Nombre</td>
+                		<td th:text="${usuario.username}">Nombre</td>
                 		<td th:text="${usuario.dni}">DNI</td>
                 		<td th:text="${usuario.email}">Email</td>
                 		<td th:text="${usuario.telefono}">Teléfono</td>
-                	
+                		<td th:text="${usuario.admin}">Admin</td>
                 	</tr>
                 
                 </tbody>

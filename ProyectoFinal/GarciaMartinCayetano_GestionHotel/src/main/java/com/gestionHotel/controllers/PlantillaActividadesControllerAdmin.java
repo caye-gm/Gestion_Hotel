@@ -20,8 +20,8 @@ public class PlantillaActividadesControllerAdmin {
 		
 		
 		@GetMapping("/gestion-actividades-plantilla/list")
-		public String gActP() {
-
+		public String gActPList(Model u) {
+			u.addAttribute("listaActividadPlantilla",servicioPA.findAll());
 			return "/admin/gActividadesPlantillaLista";
 		}
 		@GetMapping("/gestion-actividades-plantilla")

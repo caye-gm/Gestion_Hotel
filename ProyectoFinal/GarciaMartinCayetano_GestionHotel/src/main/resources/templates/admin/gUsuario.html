@@ -75,14 +75,14 @@
         <hr>
         <div class="container">
           <div class="row ">
-            <div class="col-sm-5">
+            <div class="col-sm-12">
               <!-- Content -->
               <h3>Crear usuario</h3>
 
               <div class="card">
                 <div>
                 </div>
-                <form th:object="${addUsuario}" method="POST"  action="#" th:action="@{/admin/gestor-usuario}">
+                <form th:object="${addUsuario}" method="POST"  action="#" th:action="@{/admin/gestion-usuarios/submit}">
 
             <label for="Usuario">Usuario:</label>
             <input type="text" class="form-control" placeholder="Introduce el usuario" id="username" th:field="*{username}" required>
@@ -102,7 +102,7 @@
             <input type="text" class="form-control" placeholder="Introduce el telefono" id="telefono" th:field="*{telefono}"  required>
 
 
-                  <label for="admin">Persmisos de administrador:</label>
+                  <label for="admin">Permisos de administrador:</label>
                   <input type="radio" id="admin" name="admin" value="true" th:field="*{admin}" required>Si
                   <input type="radio" id="admin" name="admin" value="false"  th:field="*{admin}" required>No
 		
@@ -115,87 +115,8 @@
               </div>
 
             </div>
-            <!-- fin del Content -->
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-5">
-              <!-- Content -->
-          
-
-              
-
-              <h3 class="text-left">Borrar Usuario</h3>
-
-              <div class="card">
-                <div>
-                </div>
-                <form >
-                  <label for="Usuario">Usuario:</label>
-                  <input type="text" class="form-control" placeholder="Introduce id del usuario" id="usuario">
-                  <p></p>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Borrar</button>
-                    <button type="submit" class="btn btn-primary">Cancelar</button>
-                  </div>
-                </form>
-
-
-                
-              </div>
-
-              
-              <!-- fin del Content -->
-            </div>
+            <!-- fin del Content -->        
           </div>
-
-          <div class="space-sm"></div>
-
-            <div class="row ">
-              <div class="col-sm-12">
-              <h3>Lista de Usuarios</h3>
-
-              <div class="card">
-                
-                <div class="starter-template">
-                <table class="table">
-                 <thead>
-                   <tr>
-                       <th>ID</th>
-                		<th>Nombre</th>
-                		<th>DNI</th>
-                		<th>Email</th>
-                		<th>Telefono</th>
-                		
-                </thead>
-                <tbody>
-                	<tr th:each="usuario : ${listaUsuario}">
-                		<td th:text="${usuario.id}">ID</td>
-                		<td th:text="${usuario.nombre}">Nombre</td>
-                		<td th:text="${usuario.dni}">DNI</td>
-                		<td th:text="${usuario.email}">Email</td>
-                		<td th:text="${usuario.telefono}">Teléfono</td>
-                	
-                	</tr>
-                
-                </tbody>
- 
-                </table>
-                
-                
-                </div>
-                
-                
-                
-                
-                
-                
-              </div>
-             </div>
-            </div>
-
-
-
         </div>
 
       </div>

@@ -87,16 +87,17 @@
                  <thead>
                    <tr>
                        <th>ID</th>
-                		<th>Hora de inicio</th>
-                		<th>Nombre</th>
+                       <th>Nombre</th>
+                	   <th>Duracion</th>
+                		
                 		
                 		
                 </thead>
                 <tbody>
-                	<tr th:each="Actividad : ${listaActividad}">
+                	<tr th:each="Actividad : ${listaActividadPlantilla}">
                 		<td th:text="${Actividad.id}">ID</td>
                 		<td th:text="${Actividad.nombre}">Nombre</td>
-                		<td th:text="${Actividad.horaInicio}">Hora de inicio</td>
+                		<td th:text="${Actividad.duracion}">Duracion</td>
                 		
                 	
                 	</tr>

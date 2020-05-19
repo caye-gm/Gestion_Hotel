@@ -21,7 +21,8 @@ public class ActividadControllerAdmin {
 		
 		
 		@GetMapping("/gestion-actividades/list")
-		public String gestionactividad() {			
+		public String gestionactividadLista(Model u) {
+			u.addAttribute("listaActividad", servicioA.findAll());
 			return "/admin/gActividadesLista";
 		}
 		

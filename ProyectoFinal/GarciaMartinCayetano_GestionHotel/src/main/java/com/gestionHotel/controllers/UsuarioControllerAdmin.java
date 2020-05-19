@@ -20,18 +20,18 @@ public class UsuarioControllerAdmin {
 	
 		//gestion usuario
 		@GetMapping("/gestion-usuarios/list")
-		public String gestionusuarios() {
-			
+		public String gestionusuarios(Model u) {
+			u.addAttribute("listaUsuario", servicio.findAll());
 			return "/admin/gUsuarioLista";
 		}
 		
 		@GetMapping("/gestion-usuarios")
-		public String gestionusuarios(Model u) {
-			u.addAttribute("usuario", new Usuario());
+		public String usuario(Model u) {
+			u.addAttribute("addUsuario", new Usuario());
 			return "/admin/gUsuario";
 		}
 		
-		@PostMapping("/admin/gestion-usuarios")
+		@PostMapping("/gestion-usuarios/submit")
 		public String usuario(@ModelAttribute("addUsuario") Usuario u) { 
 		servicio.registrar(u);
 		return "redirect:/admin/gestion-usuarios";
