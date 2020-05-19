@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/css/Model.css" rel="stylesheet" type="text/css">
@@ -78,47 +77,29 @@
                     <div class="row ">
                         <div class="col-sm-12">
                             <!-- Content -->
-                    <h3 class="text-left">Lista de habitaciones</h3>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="starter-template">
-                <table class="table text-center">
-                 <thead>
-                   <tr>
-                       <th>ID</th>
-                		<th>DNI</th>
-                		
-                </thead>
-                <tbody>
-                	<tr th:each="habitacion : ${listaHabitaciones}" >
-                		
-                		<td th:text="${habitacion.id}">ID</td>
-                		<td th:text="${habitacion.precio}">Precio</td>
-                		
-                		<td><a href="#" th:href="@{/admin/gestion-habitaciones/borrar/{id}(id=${habitacion.id})}"><i class="fa fa-times"></i></a></td>
-                	</tr>
-                
-                </tbody>
- 
-                </table>
-                
-                
-                </div>
+                            <h3>Crear Habitacion Doble</h3>
 
-                                </div>
-                                <!-- fin del Content -->
-                            </div>
-                        </div>
+                            <div class="card">
+
+                                 <form th:object="${addHabitacionDob}" method="POST" action="#" th:action="@{/admin/gHabitaciones/gHabitacionesDoble/submit}">
+
+                                    <label for="precio">Precio:</label>
+                                    <input type="number" id="precio" name="precio" th:field="*{precio}" required>
+                                    <br>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Crear</button>
+                                        <button type="reset" class="btn btn-primary">Cancelar</button>
+                                    </div>
+                                </form>
 
                             </div>
 
                         </div>
                        
                         
-                        
+                        <div class="col-sm-2">
+                        </div>
 
-                        
                         
 
 

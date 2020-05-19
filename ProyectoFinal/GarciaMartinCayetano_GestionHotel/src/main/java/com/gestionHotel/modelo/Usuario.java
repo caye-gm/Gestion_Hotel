@@ -1,3 +1,4 @@
+
 package com.gestionHotel.modelo;
 
 import java.util.ArrayList;
