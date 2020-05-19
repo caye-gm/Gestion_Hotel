@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,7 +28,11 @@ public class Reserva {
 	
 	@Id@GeneratedValue
 	private long id;
-	private LocalDate fecha_entrada,fecha_Salida;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fecha_entrada;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fecha_Salida;
 
 	@ManyToOne
 	private Usuario usuario;
@@ -40,23 +46,23 @@ public class Reserva {
 	
 	/*constructores*/
 	
-	public Reserva(LocalDate fecha_entrada, LocalDate fecha_Salida) {
+	public Reserva(LocalDate fecha_entrada, LocalDate fecha_salida) {
 		super();
 		this.fecha_entrada = fecha_entrada;
-		this.fecha_Salida = fecha_Salida;
+		this.fecha_Salida = fecha_salida;
 	}
 	
-	public Reserva(LocalDate fecha_entrada, LocalDate fecha_Salida, Usuario usuario) {
+	public Reserva(LocalDate fecha_entrada, LocalDate fecha_salida, Usuario usuario) {
 		super();
 		this.fecha_entrada = fecha_entrada;
-		this.fecha_Salida = fecha_Salida;
+		this.fecha_Salida = fecha_salida;
 		this.usuario = usuario;
 	}
 
-	public Reserva(LocalDate fecha_entrada, LocalDate fecha_Salida, List<LineaReserva> lineaReserva) {
+	public Reserva(LocalDate fecha_entrada, LocalDate fecha_salida, List<LineaReserva> lineaReserva) {
 		super();
 		this.fecha_entrada = fecha_entrada;
-		this.fecha_Salida = fecha_Salida;
+		this.fecha_Salida = fecha_salida;
 		this.lineaReserva = lineaReserva;
 	}
 	

@@ -40,6 +40,7 @@ public class HabitacionControllerAdmin {
 		
 		@PostMapping("/gHabitaciones/submit")
 		public String anyadira(@ModelAttribute("addHabitacion") Habitacion u) { 
+			
 			if(u instanceof Individual) {
 				servicioHab.save(u);
 			}else if(u instanceof Doble) {

@@ -20,7 +20,7 @@
   <div class="container-fluid">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-      <a class="navbar-brand" href="/"><img src="img/logo.png" alt="logo de la web" width="50px"></a>
+      <a class="navbar-brand" href="/"><img src="../img/logo.png" alt="logo de la web" width="50px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -79,17 +79,17 @@
                 <table class="table">
                  <thead>
                    <tr>
-                		<th>Nombre</th>
+                		
                 		<th>fecha entrada</th>
                 		<th>fecha Salida</th>
-                		
+                		<th>Borrar</th>
                 </thead>
                 <tbody>
-                	<tr th:each="Reserva : ${listaReserva}">
-                		<td th:text="${Reserva.usuario}">Nombre</td>
-                		<td th:text="${Reserva.fecha_entrada}">fecha entrada</td>
-                		<td th:text="${Reserva.fecha_entrada}">fecha Salida</td>
-                	
+                	<tr th:each="reserva : ${listaReservas}">
+                		
+                		<td th:text="${reserva.fecha_entrada}">fecha entrada</td>
+                		<td th:text="${reserva.fecha_entrada}">fecha Salida</td>
+                		<td><a href="#" th:href="@{/reserva/borrar/{id}(id=${reserva.id})}"><i class="fa fa-times"></i></a></td>
                 	</tr>
                 
                 </tbody>

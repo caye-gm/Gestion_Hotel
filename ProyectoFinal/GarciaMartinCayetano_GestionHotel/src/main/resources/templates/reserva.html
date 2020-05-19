@@ -69,37 +69,33 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12 card">
-              <form th:object="${addReserva}" method="POST" action="#" th:action="@{/admin/gestion-reservas/submit}">
+              <form th:object="${addReserva}" method="POST" action="#" th:action="@{/reserva/submit}">
                 <div class="row ">
                   <div class="col-sm-4">
-                    <div class="form-group ">
-                      <label for="fecha_entr">Fecha de Entrada:</label>
-                      <input type="date" class="form-control" id="fecha_entr" placeholder="Fecha de entrada">
-                    </div>
+                    
+                      <label for="fecha_entrada">Fecha de Entrada:</label>
+                      <input type="date" name="fecha_entrada" class="form-control" id="fecha_entrada" placeholder="Fecha de entrada" th:field="*{fecha_entrada}" required>
+                    
                   </div>
                   <div class="col-sm-4 ">
-                    <div class="form-group">
-                      <label for="fecha_sal">Fecha de Salida:</label>
-                      <input type="date" class="form-control" id="fecha_sal" placeholder="Fecha de salida">
-                    </div>
+                    
+                     <label for="fecha_entrada">Fecha de Entrada:</label>
+                      <input type="date" name="fecha_entrada" class="form-control" id="fecha_entrada" placeholder="Fecha de entrada" th:field="*{fecha_Salida}" required>
+                    
                   </div>
                   <div class="col-sm-4">
-                    <div class="form-group">
+                    
                       <label for="hab">Tipo de habitaciones:</label>
                       <select id="hab" class="form-control">
                         <option selected>Individual</option>
                         <option>Doble</option>
                         <option>Familiar Máximo 4 personas</option>
                       </select>
-                    </div>
-                  </div>   
-                  
+                    
+                  </div>         
                 </div>
-
                   <div class="row ">
-
                     <div class="col-sm-12 ">
-                  
                       <button type="submit" class="btn btn-primary">Crear Reserva</button>
                     </div>
                   </div>
@@ -116,7 +112,7 @@
       </div>
     </div>
   </div>
-  </div>
+  
 
   <div class="space"></div>
 
