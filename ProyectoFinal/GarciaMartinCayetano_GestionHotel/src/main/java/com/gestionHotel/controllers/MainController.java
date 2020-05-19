@@ -31,10 +31,7 @@ public class MainController {
 	}
 	
 
-	@GetMapping("/reserva")
-	public String reserva() {
-		return "reserva";
-	}
+	
 	
 	
 	

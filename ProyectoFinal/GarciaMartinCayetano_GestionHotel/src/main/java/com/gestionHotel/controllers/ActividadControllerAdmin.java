@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gestionHotel.modelo.Actividad;
 import com.gestionHotel.servicios.ActividadServicio;
+import com.gestionHotel.servicios.PlantillaActividadesServicio;
 @Controller
 @RequestMapping("/admin")
 public class ActividadControllerAdmin {
@@ -18,7 +19,8 @@ public class ActividadControllerAdmin {
 	
 		@Autowired
 		ActividadServicio servicioA;
-		
+		@Autowired
+		PlantillaActividadesServicio servicioPA;
 		
 		@GetMapping("/gestion-actividades/list")
 		public String gestionactividadLista(Model u) {
@@ -28,12 +30,14 @@ public class ActividadControllerAdmin {
 		
 		@GetMapping("/gestion-actividades")
 		public String gestionactividad(Model u) {
+			u.addAttribute("plantillaAct", servicioPA.findAll());
 			u.addAttribute("addActividad", new Actividad());	
 			return "/admin/gActividades";
 		}
 		@PostMapping("/gestion-actividades/submit")
-		public String addActividad(@ModelAttribute("Actividad") Actividad u) { 
+		public String addActividad(@ModelAttribute("Actividad") Actividad u,Model model) { 
 		servicioA.save(u);
+		model.addAttribute("plantillaAct",servicioPA.findAll());
 		return "redirect:/admin/gestion-actividades";
 		}
 	

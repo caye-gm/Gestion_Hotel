@@ -84,10 +84,11 @@
                 </div>
                 <form th:object="${addActividad}" method="POST" action="#" th:action="@{/admin/gestion-actividades/submit}">
                 
-                <div th:object="${id}">
-                <label for="pa">pa:</label>
-                  <input type="Text" class="form-control" name="pa" placeholder="Introduce la id de la actividad" id="pa" th:field="pa" required>
-                </div>
+                
+                <select id="Plantilla" class="form-control" th:field="*{pa}">
+				<option value="">Plantilla</option>
+				<option th:each="Plantilla : ${plantillaAct}" th:value="${Plantilla.id}" th:text="${Plantilla.nombre}">N/S</option>
+				</select>
                   
                   
                  <!--   <label for="repe">Repeticiones:</label>
