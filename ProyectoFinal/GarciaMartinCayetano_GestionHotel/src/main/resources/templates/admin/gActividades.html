@@ -75,14 +75,14 @@
         <hr>
         <div class="container">
           <div class="row ">
-            <div class="col-sm-5">
+            <div class="col-sm-12">
               <!-- Content -->
               <h3 class="text-left">Añadir actividad</h3>
 
               <div class="card">
                 <div>
                 </div>
-                <form th:object="${Actividad}" method="POST" action="#" th:action="@{/admin/gestion-actividades}">
+                <form th:object="${addActividad}" method="POST" action="#" th:action="@{/admin/gestion-actividades/submit}">
                 
                 <div th:object="${id}">
                 <label for="pa">pa:</label>
@@ -113,28 +113,9 @@
 
 
             </div>
-            <!-- fin del Content -->
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-5">
-              <!-- Content -->
-              <h3>Borrar Actividad</h3>
-
-              <div class="card">
-                <div>
-                </div>
-                <form>
-                  <label for="dele-act">ID actividad:</label>
-                  <input type="text" class="form-control" placeholder="ID de la actividad" id="dele-act" required>
-                  <div class="space-sm"> </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Inhabilitar</button>
-                    <button type="reset" class="btn btn-primary">Cancelar</button>
-                  </div>
-                </form>
-              </div>
-              <br>
+            
+            
+              
               
 
               
@@ -142,19 +123,13 @@
             </div>
           </div>
 
-          <div class="space-sm"></div>
+          
 
-            <div class="row ">
-              <div class="col-sm-12">
-              <h3>Lista de actividades activas</h3>
-
-              <div class="card">
-                
-              </div>
-             </div>
-            </div>
-
-
+        
+            
+	
+			
+			</div>
 
         </div>
 
@@ -163,7 +138,7 @@
 
       </div>
     </div>
-  </div>
+  
 
 
 

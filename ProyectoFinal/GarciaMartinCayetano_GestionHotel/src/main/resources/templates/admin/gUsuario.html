@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <!-- Required meta tags -->
@@ -82,27 +82,30 @@
               <div class="card">
                 <div>
                 </div>
-                <form>
+                <form th:object="${addUsuario}" method="POST"  action="#" th:action="@{/admin/gestor-usuario}">
 
-                  <label for="Usuario">Usuario:</label>
-                  <input type="Usuario" class="form-control" placeholder="Introduce el usuario" id="usuario" required>
+            <label for="Usuario">Usuario:</label>
+            <input type="text" class="form-control" placeholder="Introduce el usuario" id="username" th:field="*{username}" required>
+            
+             <label for="pass">Contraseña:</label>
+            <input type="password" class="form-control" placeholder="Contraseña" id="password" th:field="*{password}" required>
+            
+            
+            <label for="DNI">DNI:</label>
+            <input type="text" class="form-control" placeholder="Introduce el DNI" id="dni" th:field="*{dni}"  required>
+            
+            
+            <label for="Email">Email:</label>
+            <input type="Email" class="form-control" placeholder="Introduce el email" id="email" th:field="*{email}"  required>
+            
+            <label for="phone">Telefono:</label>
+            <input type="text" class="form-control" placeholder="Introduce el telefono" id="telefono" th:field="*{telefono}"  required>
 
-                  <label for="Usuario">Nombre y apellidos:</label>
-                  <input type="Usuario" class="form-control" placeholder="Introduce el nombre" id="nombre" required>
-
-                  <label for="pass">Contraseña:</label>
-                  <input type="password" class="form-control" placeholder="Contraseña" id="pass" required>
-
-                  <label for="number">Telefono:</label>
-                  <input type="number" class="form-control" placeholder="Introduce el telefono" id="telefono" required>
-
-                  <label for="email">Correo electronico:</label>
-                  <input type="email" class="form-control" placeholder="Introduce el email" id="email" required>
 
                   <label for="admin">Persmisos de administrador:</label>
-                  <input type="radio" id="admin" name="admin" value="Si" required>Si
-                  <input type="radio" id="admin" name="admin" value="No" required>No
-
+                  <input type="radio" id="admin" name="admin" value="true" th:field="*{admin}" required>Si
+                  <input type="radio" id="admin" name="admin" value="false"  th:field="*{admin}" required>No
+		
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Crear usuario</button>
                     <button type="reset" class="btn btn-primary">Cancelar</button>
@@ -118,30 +121,18 @@
             </div>
             <div class="col-sm-5">
               <!-- Content -->
-              <h3>Inhabilitar usuario</h3>
+          
+
+              
+
+              <h3 class="text-left">Borrar Usuario</h3>
 
               <div class="card">
                 <div>
                 </div>
-                <form>
+                <form >
                   <label for="Usuario">Usuario:</label>
-                  <input type="Usuario" class="form-control" placeholder="Introduce el usuario" id="usuario">
-                  <p></p>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Inhabilitar</button>
-                    <button type="reset" class="btn btn-primary">Cancelar</button>
-                  </div>
-                </form>
-              </div>
-
-              <h3 class="text-left">Borrar de la base de datos</h3>
-
-              <div class="card">
-                <div>
-                </div>
-                <form>
-                  <label for="Usuario">Usuario:</label>
-                  <input type="Usuario" class="form-control" placeholder="Introduce el usuario" id="usuario">
+                  <input type="text" class="form-control" placeholder="Introduce id del usuario" id="usuario">
                   <p></p>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Borrar</button>
@@ -165,6 +156,39 @@
               <h3>Lista de Usuarios</h3>
 
               <div class="card">
+                
+                <div class="starter-template">
+                <table class="table">
+                 <thead>
+                   <tr>
+                       <th>ID</th>
+                		<th>Nombre</th>
+                		<th>DNI</th>
+                		<th>Email</th>
+                		<th>Telefono</th>
+                		
+                </thead>
+                <tbody>
+                	<tr th:each="usuario : ${listaUsuario}">
+                		<td th:text="${usuario.id}">ID</td>
+                		<td th:text="${usuario.nombre}">Nombre</td>
+                		<td th:text="${usuario.dni}">DNI</td>
+                		<td th:text="${usuario.email}">Email</td>
+                		<td th:text="${usuario.telefono}">Teléfono</td>
+                	
+                	</tr>
+                
+                </tbody>
+ 
+                </table>
+                
+                
+                </div>
+                
+                
+                
+                
+                
                 
               </div>
              </div>
