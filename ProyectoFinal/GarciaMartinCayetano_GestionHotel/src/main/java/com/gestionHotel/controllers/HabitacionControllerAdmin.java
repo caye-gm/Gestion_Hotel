@@ -49,7 +49,7 @@ public class HabitacionControllerAdmin {
 		}
 		@GetMapping("/gHabitaciones/gHabitacionesIndividual")
 		public String indexgestionhabitacionesIndividual(Model m) {
-			m.addAttribute("addHabitacionInd", new Individual(0));
+			m.addAttribute("addHabitacionInd",new Individual(0));
 			return "/admin/gHabitacionesIndividual";
 		}
 		@GetMapping("/gHabitaciones/gHabitacionesDoble")
