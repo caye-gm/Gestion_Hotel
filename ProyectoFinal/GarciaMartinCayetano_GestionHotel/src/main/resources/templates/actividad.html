@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="../css/Model.css" rel="stylesheet" type="text/css">
@@ -71,55 +72,77 @@
  
       </div>
       <div class="col-sm-8">
-        <h2 class="text-center">Gestor de Actividades</h2>
+      
+      
+      	
+     
+     
+ 		 
+ 		    
+        <h2 class="text-center">Actividades para clientes</h2>
         <hr>
         <div class="container">
           <div class="row ">
             <div class="col-sm-12">
+            
+            <h3 class="text-left">Tus actividades</h3>
+             <div class="card">
+                
+                <div class="starter-template">
+                <table class="table text-center">
+                 <thead>
+                   <tr>
+                       <th>ID</th>
+                		<th>Nombre</th>
+                		<th>Hora de inicio</th>
+                		<th>Borrar</th>
+                		
+                </thead>
+                <tbody>
+                	<tr th:each="Actividad : ${melistaActividad}">
+                		<td th:text="${Actividad.id}">ID</td>
+                		<td th:text="${Actividad.pa.nombre}">Nombre</td>
+                		<td th:text="${Actividad.horaInicio}">Dia de inicio</td>  
+                		<td><a href="#" th:href="@{/actividad-usuario/submit/remove/{id}(id=${Actividad.id})}"><i class="fa fa-times"></i></a></td>            	
+                	</tr>
+                </tbody> 
+                </table> 
+              </div>
+            </div>
+            
+            <br> 
               <!-- Content -->
               <h3 class="text-left">Añadir actividad</h3>
 
               <div class="card">
-                <div>
-                </div>
-                <form th:object="${addActividad}" method="POST" action="#" th:action="@{/admin/gestion-actividades/submit}">
                 
-                
-                <select id="Plantilla" class="form-control" th:field="*{pa}">
-				<option value="">Selecciona una opción</option>
-				<option th:each="Plantilla : ${plantillaAct}" th:value="${Plantilla.id}" th:text="${Plantilla.nombre}">N/S</option>
-				</select>
-                  
-                  
-                 <!--   <label for="repe">Repeticiones:</label>
-                  <input type="number" class="form-control" placeholder="Introduce un valor" id="repe" required>
-					-->
-                  <label for="fechas">Fecha:</label>
-                  <input type="date" class="form-control" placeholder="Introduce la id de la actividad" id="fechas" th:field="*{horaInicio}" required>
-					<br>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <button type="submit" class="btn btn-primary">Cancelar</button>
-                  </div>
-                </form>
-
-
-                
+                <div class="starter-template">
+                <table class="table text-center">
+                 <thead>
+                   <tr>
+                       <th>ID</th>
+                		<th>Nombre</th>
+                		<th>Hora de inicio</th>
+                		<th>Apuntarse</th>
+                		
+                </thead>
+                <tbody>
+                	<tr th:each="Actividad : ${listaActividad}">
+                		<td th:text="${Actividad.id}">ID</td>
+                		<td th:text="${Actividad.pa.nombre}">Nombre</td>
+                		<td th:text="${Actividad.horaInicio}">Dia de inicio</td>  
+                		<td><a href="#" th:href="@{/actividad-usuario/submit/add/{id}(id=${Actividad.id})}"><i class="fas fa-plus"></i></a></td>            	
+                	</tr>
+                </tbody> 
+                </table>
+                               
               </div>
-
-
-
-             
-
-
-
             </div>
             
             
-              
-              
-
-              
+            
+            
+            
               <!-- fin del Content -->
             </div>
           </div>
@@ -138,10 +161,10 @@
       <div class="col-sm-2">
 
       </div>
-    </div>
+ 
   
 
-
+</div>
 
 
 

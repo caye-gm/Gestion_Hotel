@@ -23,8 +23,12 @@ public class PlantillaActividadesControllerAdmin {
 		@GetMapping("/gestion-actividades-plantilla/list")
 		public String gActPList(Model u) {
 			u.addAttribute("listaActividadPlantilla",servicioPA.findAll());
+
 			return "/admin/gActividadesPlantillaLista";	
 		}
+		
+		
+		
 		//borrar
 		@GetMapping("/gestion-actividades-plantilla/borrar/{id}")
 		public String borrar(@PathVariable("id") long id) {

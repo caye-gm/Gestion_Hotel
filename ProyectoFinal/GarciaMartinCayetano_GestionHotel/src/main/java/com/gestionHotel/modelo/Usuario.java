@@ -48,7 +48,7 @@ public class Usuario implements UserDetails {
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	
-	private List<Actividad> actividades = new ArrayList<Actividad>();
+	private List<Actividad> actividades = new ArrayList<>();
 
 	
 	
