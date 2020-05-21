@@ -11,9 +11,14 @@ import lombok.NoArgsConstructor;
 @DiscriminatorValue("D")
 public class Doble extends Habitacion{
 
-public Doble(double precio) {
-	super(precio);
+	
+
+	public Doble(int numPuerta, String tipo, double precio) {
+		super(numPuerta, tipo, precio);
+	}
+	
+
 }
 
 	
-}
+

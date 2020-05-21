@@ -25,7 +25,7 @@ public class Actividad {
 
 	@Id @GeneratedValue
 	private long id;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	 @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private LocalDate horaInicio;
 	
 	@ManyToOne

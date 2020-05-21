@@ -60,10 +60,10 @@ public class GarciaMartinCayetanoGestionHotelApplication {
 			sPA.save(pA2);
 			
 			
-			Habitacion h1=new Individual(35);
-			Habitacion h2=new Individual(35);
-			Habitacion h3=new Doble(35);
-			Habitacion h4=new Familiar(35);
+			Habitacion h1=new Individual(1,"Individual Estandar",35);
+			Habitacion h2=new Individual(2,"Individual Developer",40);
+			Habitacion h3=new Doble(5,"Doble Estandar",50);
+			Habitacion h4=new Familiar(10,"Familiar Sweet",60);
 			
 			servicioH.save(h1);
 			servicioH.save(h2);

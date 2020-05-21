@@ -102,6 +102,50 @@
               </form>
 
             </div>
+            <div class="space-sm"></div>
+            <h5>Lista de reservas:</h5>
+            <div class="col-sm-12 card">
+            
+            <div class="starter-template">
+                <table class="table">
+                 <thead>
+                   <tr>
+                		
+                		<th>fecha entrada</th>
+                		<th>fecha Salida</th>
+                		<th>Borrar</th>
+                </thead>
+                <tbody>
+                	<tr th:each="reserva : ${listaReservas}">
+                		
+                		<td th:text="${reserva.fecha_entrada}">fecha entrada</td>
+                		<td th:text="${reserva.fecha_entrada}">fecha Salida</td>
+                		<td><a href="#" th:href="@{/reserva/borrar/{id}(id=${reserva.id})}"><i class="fa fa-times"></i></a></td>
+                	</tr>
+                
+                </tbody>
+                
+                
+                
+                
+                
+                </table>
+                
+                
+                
+                
+                
+                
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
           </div>
         </div>
         <div class="col-sm-1">

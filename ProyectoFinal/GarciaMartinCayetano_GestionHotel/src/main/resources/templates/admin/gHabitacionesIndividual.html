@@ -83,8 +83,15 @@
 
                                 <form th:object="${addHabitacionInd}" method="POST" action="#" th:action="@{/admin/gHabitaciones/gHabitacionesIndividual/submit}">
 
+                                    <label for="numPuerta">Numero de puerta:</label>
+                                    <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" min="0" th:field="*{numPuerta}" required>
+									
+									<label for="tipo">Nombre de habitacion:</label>
+									 <input class="form-control" type="text" id="tipo" name="tipo" placeholder="Individual"  th:field="*{tipo}" required>
+
+                                    
                                     <label for="precio">Precio:</label>
-                                    <input type="number" id="precio" name="precio" placeholder="01.00" step="0.01" min="0"  th:field="*{precio}" required>
+                                    <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" step="0.01" min="0" th:field="*{precio}" required>
                                     <br>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Crear</button>

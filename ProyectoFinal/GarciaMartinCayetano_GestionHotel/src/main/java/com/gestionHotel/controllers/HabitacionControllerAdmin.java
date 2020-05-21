@@ -26,40 +26,36 @@ public class HabitacionControllerAdmin {
 		
 		
 		
-		@GetMapping("/gestion-habitaciones/list")
-		public String gestionhabitacionesList(Model u) {
-			u.addAttribute("listaHabitaciones", servicioHab.findAll());
-			return "/admin/gHabitacionesLista";
-		}
+		
 		
 		//borrar
 		
-				@GetMapping("/gestion-habitaciones/borrar/{id}")
-				public String borrar(@PathVariable("id") long id) {
-					servicioHab.deleteById(id);
-					return "redirect:/admin/gestion-habitaciones/list";
+	    @GetMapping("/gestion-habitaciones/borrar/{id}")
+		public String borrar(@PathVariable("id") long id) {
+			servicioHab.deleteById(id);
+		return "redirect:/admin/gestion-habitaciones/";
 				}
 		
 		
 		//index
 		@GetMapping("/gestion-habitaciones")
-		public String indexgestionhabitaciones() {
-			
+		public String indexgestionhabitaciones(Model u) {
+			u.addAttribute("listaHabitaciones", servicioHab.findAll());
 			return "/admin/gHabitaciones";
 		}
 		@GetMapping("/gHabitaciones/gHabitacionesIndividual")
 		public String indexgestionhabitacionesIndividual(Model m) {
-			m.addAttribute("addHabitacionInd",new Individual(0));
+			m.addAttribute("addHabitacionInd",new Individual());
 			return "/admin/gHabitacionesIndividual";
 		}
 		@GetMapping("/gHabitaciones/gHabitacionesDoble")
 		public String indexgestionhabitacionesDoble(Model m) {
-			m.addAttribute("addHabitacionDob", new Doble(0));
+			m.addAttribute("addHabitacionDob", new Doble());
 			return "/admin/gHabitacionesDoble";
 		}
 		@GetMapping("/gHabitaciones/gHabitacionesFamiliar")
 		public String indexgestionhabitacionesFamiliar(Model m) {
-			m.addAttribute("addHabitacionFam", new Familiar(0));
+			m.addAttribute("addHabitacionFam", new Familiar());
 			return "/admin/gHabitacionesFamiliar";
 		}
 		//tipos

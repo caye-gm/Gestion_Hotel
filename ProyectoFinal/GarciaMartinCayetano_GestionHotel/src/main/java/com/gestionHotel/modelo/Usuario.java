@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -19,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Data
@@ -47,7 +49,7 @@ public class Usuario implements UserDetails {
 	private boolean admin;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
-	
+	@JoinColumn(updatable = true, nullable = true)
 	private List<Actividad> actividades = new ArrayList<>();
 
 	
@@ -75,10 +77,20 @@ public class Usuario implements UserDetails {
 	}
 	
 	public void removeActividad(Actividad a) {
-		actividades.remove(a);
 		a.getUsuarios().remove(this);
+		actividades.remove(a);
+		
 	}
-
+	public Actividad findActivityByID(Actividad a) {
+		Actividad a1=null;
+		for (Actividad v : actividades) {
+			if (v.getId()==a.getId()) {
+				 a1=v;
+				 
+			}
+		}
+		return a1;
+	}
 
 
 

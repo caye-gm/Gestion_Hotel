@@ -22,32 +22,23 @@ public class ReservaController {
 	@Autowired
 	UsuarioServicio usuarioS;
 	
-	/* Consulta para obtener la lista de reservas de mi usuario
-	@GetMapping("/reserva/list")
-	public String gestionreservas(@AuthenticationPrincipal Usuario usu,Model u) {
-		u.addAttribute("listaReserva", reservaS.findAll());
-		return "reservaLista";
-	}
-	*/
-	@GetMapping("/reserva/list")
-	public String reservaLista(Model u) {
-			u.addAttribute("listaReservas", reservaS.findAll());
-			
-		return "reservaLista";
-	}
+
+	
+	
+	//borrar
 	@GetMapping("/reserva/borrar/{id}")
 	public String borrar(@PathVariable("id") long id) {
 		reservaS.deleteById(id);
-		return "redirect:/reserva/list";
+		return "redirect:/reserva";
 	}
 	
-	//many to one reserva usuario
+	
 	
 	
 	
 	@GetMapping("/reserva")
-	public String reserva(Model model) {
-		
+	public String reserva(Model model,@AuthenticationPrincipal Usuario u) {
+		model.addAttribute("listaReservas", reservaS.reservasUsuarios(u.getId()));
 		model.addAttribute("addReserva", new Reserva());
 		return "reserva";
 	}

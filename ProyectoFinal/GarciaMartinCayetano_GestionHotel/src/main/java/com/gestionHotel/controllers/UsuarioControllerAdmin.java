@@ -20,15 +20,10 @@ public class UsuarioControllerAdmin {
 		UsuarioServicio servicio;
 	
 	
-		//gestion usuario
-		@GetMapping("/gestion-usuarios/list")
-		public String gestionusuarios(Model u) {
-			u.addAttribute("listaUsuario", servicio.findAll());
-			return "/admin/gUsuarioLista";
-		}
-		
+
 		@GetMapping("/gestion-usuarios")
 		public String usuario(Model u) {
+			u.addAttribute("listaUsuario", servicio.findAll());
 			u.addAttribute("addUsuario", new Usuario());
 			return "/admin/gUsuario";
 		}
@@ -44,7 +39,7 @@ public class UsuarioControllerAdmin {
 		@GetMapping("/gestion-usuarios/borrar/{id}")
 		public String borrar(@PathVariable("id") long id) {
 			servicio.deleteById(id);
-			return "redirect:/admin/gestion-usuarios/list";
+			return "redirect:/admin/gestion-usuarios";
 		}
 		
 		

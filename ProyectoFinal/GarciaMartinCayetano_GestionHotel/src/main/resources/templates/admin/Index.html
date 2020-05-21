@@ -31,27 +31,32 @@
             <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
           </li>
           
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="Gestion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Gestionar
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-              <a class="dropdown-item" href="/admin/gestion-usuarios">Usuarios</a>
-              <a class="dropdown-item" href="/admin/gestion-usuarios/list">Usuarios Lista</a>
-              <a class="dropdown-item" href="/admin/gestion-reservas">Reservas</a>
-              <a class="dropdown-item" href="/admin/gestion-reservas/list">Reservas Lista</a>
-              <a class="dropdown-item" href="/admin/gestion-habitaciones">Habitaciones</a>
-              <a class="dropdown-item" href="/admin/gestion-habitaciones/list">Habitaciones Lista</a>
-              <a class="dropdown-item" href="/admin/gestion-actividades">Actividades</a>
-              <a class="dropdown-item" href="/admin/gestion-actividades/list">Actividades Lista</a>
-              <a class="dropdown-item" href="/admin/gestion-actividades-plantilla">PlantillasAct</a>
-              <a class="dropdown-item" href="/admin/gestion-actividades-plantilla/list">PlantillasAct Lista</a>
-            </div>
+
+		<li class="nav-item">
+            <a class="nav-link" href="/admin/gestion-usuarios">Usuario <span class="sr-only"></span></a>
           </li>
+		
+			<li class="nav-item">
+            <a class="nav-link" href="/admin/gestion-reservas/list">Reserva <span class="sr-only"></span></a>
+          </li>
+          
+          
+		
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/gestion-habitaciones">Habitaciones <span class="sr-only"></span></a>
+          </li>
+          
+		
+		<li class="nav-item">
+            <a class="nav-link" href="/admin/gestion-actividades">Actividades <span class="sr-only"></span></a>
+          </li>
+          
+		
 
         </ul>
         <ul class="navbar-nav btn-group" >
+        
+        
         <li class="nav-item dropdown " >
           <a  class="nav-link dropdown-toggle" href="#" id="mi cuenta" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Mi Cuenta
@@ -60,6 +65,9 @@
             <a class="dropdown-item" th:href="@{/logout}">Cerrar Sesion</a>
           </div>
         </li>
+        
+        
+        
         </ul>
 
       </div>

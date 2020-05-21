@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 public class Familiar extends Habitacion{
 
 
-	public Familiar(double precio) {
-		super(precio);
+
+	public Familiar(int numPuerta, String tipo, double precio) {
+		super(numPuerta, tipo, precio);
 	}
+	
 
 	
 	

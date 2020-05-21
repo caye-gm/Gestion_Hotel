@@ -52,10 +52,20 @@ public class UsuarioController {
 	@GetMapping("/actividad-usuario/submit/remove/{id}")
 	public String rmUsuarioActividad(@PathVariable("id") long id,Model model,@AuthenticationPrincipal Usuario u) {
 		model.addAttribute("melistaActividad",servicioA.findAll());
-
-				u.removeActividad(servicioA.findById(id));
+		System.out.println(u);
+		Actividad a1=servicioA.findById(id);
+		System.out.println(a1);
+		
+				a1=u.findActivityByID(a1);
+		
+				u.removeActividad(a1);
+				
+				
 				servicioU.edit(u);
-
+				servicioA.edit(a1);
+				
+				System.out.println(u);
+				System.out.println(a1);
 		return "redirect:/actividad-usuario";
 	}
 	

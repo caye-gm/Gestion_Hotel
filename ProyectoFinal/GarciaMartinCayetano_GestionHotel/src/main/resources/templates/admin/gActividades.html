@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="../css/Model.css" rel="stylesheet" type="text/css">
@@ -93,8 +94,8 @@
                  <!--   <label for="repe">Repeticiones:</label>
                   <input type="number" class="form-control" placeholder="Introduce un valor" id="repe" required>
 					-->
-                  <label for="fechas">Fecha:</label>
-                  <input type="date" class="form-control" placeholder="Introduce la id de la actividad" id="fechas" th:field="*{horaInicio}" required>
+                  <label for="fechas">Fecha y hora:</label>
+                  <input type="datetime-local" class="form-control" placeholder="Introduce la id de la actividad" id="fechas" th:field="*{horaInicio}" required>
 					<br>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Enviar</button>
@@ -102,23 +103,45 @@
                   </div>
                 </form>
 
-
-                
               </div>
-
-
-
-             
-
-
-
             </div>
             
+ 
+            <div class="space-sm"></div>
+              <div class="col-sm-12">
+              <h3>Lista de actividades activas</h3>
+					
+	
+              <div class="card">
+                
+                <div class="starter-template">
+                <table class="table text-center">
+                 <thead>
+                   <tr>
+                       <th>ID</th>
+                		<th>Nombre</th>
+                		<th>Hora de inicio</th>
+                		<th>Borrar</th>
+                		
+                </thead>
+                <tbody>
+                	<tr th:each="Actividad : ${listaActividad}">
+                		<td th:text="${Actividad.id}">ID</td>
+                		<td th:text="${Actividad.pa.nombre}">Nombre</td>
+                		<td th:text="${Actividad.horaInicio}">Hora de inicio</td>  
+                		<td><a href="#" th:href="@{/admin/gestion-actividades/borrar/{id}(id=${Actividad.id})}"><i class="fa fa-times"></i></a></td>            	
+                	</tr>
+                </tbody> 
+                </table>
+                
+                
+                
+  
+              </div>
+             </div>
+            </div>
             
-              
-              
-
-              
+  
               <!-- fin del Content -->
             </div>
           </div>
@@ -137,7 +160,7 @@
       <div class="col-sm-2">
 
       </div>
-    </div>
+    
   
 
 

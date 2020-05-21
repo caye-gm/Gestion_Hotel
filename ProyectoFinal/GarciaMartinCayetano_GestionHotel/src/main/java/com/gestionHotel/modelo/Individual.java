@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 public class Individual extends Habitacion {
 	
 
-	public Individual(double precio) {
-		super(precio);
+	
+
+	public Individual(int numPuerta, String tipo, double precio) {
+		super(numPuerta, tipo, precio);
 	}
 	
 	

@@ -1,15 +1,11 @@
 package com.gestionHotel.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.gestionHotel.modelo.Reserva;
-import com.gestionHotel.modelo.Usuario;
 import com.gestionHotel.servicios.ReservaServicio;
 
 @Controller
@@ -23,23 +19,17 @@ public class ReservaControllerAdmin {
 
 	
 	@GetMapping("/gestion-reservas/list")
-	public String gestionreservas() {
-		
+	public String gestionreservas(Model m) {
+		m.addAttribute("listaReservas", servicioR.findAll());
 		return "/admin/gReservasLista";
 	}
-		@GetMapping("/gestion-reservas")
-		public String gestionreservas(@AuthenticationPrincipal Usuario usu,Model u) {
-			u.addAttribute("addReserva", new Reserva());
-			return "/admin/gReservas";
+
+	//borrar
+	@GetMapping("/gestion-reservas/borrar/{id}")
+	public String borrar(@PathVariable("id") long id) {
+		servicioR.deleteById(id);
+		return "redirect:/admin/gestion-reservas/list";
 		}
-		
-		@PostMapping("/gestion-reservas/submit")
-		public String addActividad(@ModelAttribute("addReserva") Reserva u) { 
-		servicioR.save(u);
-		return "redirect:/admin/gestion-reservas";
-		}
-	
-	
 	
 	
 }
