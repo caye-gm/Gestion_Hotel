@@ -1,4 +1,4 @@
-<!doctype html >
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -18,33 +18,34 @@
 
   <div class="container-fluid">
 
-   <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
       <a class="navbar-brand" href="/"><img src="img/logo.png" alt="logo de la web" width="50px"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
             <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
           </li>
-          
-          
-          
+
+
+
 
         </ul>
-        
+
 
       </div>
     </nav>
 
-  
+
   </div>
 
   <br><br>
-  
-  
+
+
   <div class="row ">
 
     <!-- Menu principal -->
@@ -58,26 +59,27 @@
         <div class="text-center">
           <img src="../img/logo.png" alt="Logo" style="width:120px">
         </div>
-        
-      	<form  method="POST" action="#" th:action="@{/login}">
-          
-            <label for="username">Usuario:</label>
-            <input type="text" class="form-control" placeholder="Introduce el usuario" name="username" id="username" required>
-         
-          
-            <label for="pass">Contraseña:</label>
-            <input type="password" name="password" class="form-control" placeholder="Contraseña" id="password" required>
-         
+
+        <form method="POST" action="#" th:action="@{/login}">
+
+          <label for="username">Usuario:</label>
+          <input type="text" class="form-control" placeholder="Introduce el usuario" name="username" id="username"
+            required>
+
+
+          <label for="pass">Contraseña:</label>
+          <input type="password" name="password" class="form-control" placeholder="Contraseña" id="password" required>
+
           <div class="text-center">
-          		<br>
+            <br>
             <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
           </div>
         </form>
-        
+
         <span class="text-center">¿Aún no estas registrado? Pulse <a href="/registro">aqui</a>.</span>
-      
+
+      </div>
     </div>
- </div>
 
     <div class="col-sm-4">
 
@@ -93,7 +95,7 @@
 
     <div class="row">
       <div class="col-sm-3">
-      <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
+        <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
       </div>
       <div class="col-sm-6 ">
         <p class="text-center" id="clk"></p>
@@ -103,12 +105,12 @@
       </div>
       <div class="col-sm-1">
         <p class=" d-block"><a href="#">Política de datos</a></p>
-      </div>  
+      </div>
       <div class="col-sm-1">
         <p class=" d-block"><a href="#">Aviso legal</a></p>
       </div>
-      
-      </div> 
+
+    </div>
   </footer>
 
 
@@ -127,7 +129,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
- 
+
 
 </body>
 

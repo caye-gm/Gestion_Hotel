@@ -2,29 +2,30 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/css/Model.css" rel="stylesheet" type="text/css">
-    <script src="../js/reloj.js"></script>
-    <title>Hotel</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="/css/Model.css" rel="stylesheet" type="text/css">
+  <script src="../js/reloj.js"></script>
+  <title>Hotel</title>
 </head>
 
 <body class="backgroundPan">
 
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
       <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="logo de la web" width="50px"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Inicio </a>
@@ -32,12 +33,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/reserva">Reservar</a>
           </li>
-          
+
           <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="Gestion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="Gestion" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Gestionar<span class="sr-only"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/gestion-usuarios">Usuarios</a>
               <a class="dropdown-item" href="/gestion-reservas">Reservas</a>
               <a class="dropdown-item" href="/gestion-habitaciones">Habitaciones</a>
@@ -46,75 +48,80 @@
           </li>
 
         </ul>
-        <ul class="navbar-nav btn-group" >
-        <li class="nav-item dropdown " >
-          <a  class="nav-link dropdown-toggle" href="#" id="mi cuenta" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Mi Cuenta
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/login">Iniciar Sesion</a>
-            <a class="dropdown-item" href="/registro">Registro</a>
-          </div>
-        </li>
+        <ul class="navbar-nav btn-group">
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="mi cuenta" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Mi Cuenta
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/login">Iniciar Sesion</a>
+              <a class="dropdown-item" href="/registro">Registro</a>
+            </div>
+          </li>
         </ul>
 
       </div>
     </nav>
 
-    </div>
+  </div>
 
-    <br>
+  <br>
 
-    <div class="container cardBg">
-        <div class="row">
+  <div class="container cardBg">
+    <div class="row">
+      <div class="col-sm-2">
+
+      </div>
+      <div class="col-sm-8">
+        <h2 class="text-center">Gestor de Usuario</h2>
+        <hr>
+        <div class="container">
+          <div class="row ">
+            <div class="col-sm-12">
+              <!-- Content -->
+              <h3>Crear Habitacion Doble</h3>
+
+              <div class="card">
+
+                <form th:object="${addHabitacionDob}" method="POST" action="#"
+                  th:action="@{/admin/gHabitaciones/gHabitacionesDoble/submit}">
+
+                  <label for="numPuerta">Numero de puerta:</label>
+                  <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" min="0"
+                    th:field="*{numPuerta}" required>
+
+                  <label for="tipo">Nombre de habitacion:</label>
+                  <input class="form-control" type="text" id="tipo" name="tipo" placeholder="Doble" th:field="*{tipo}"
+                    required>
+
+
+                  <label for="precio">Precio:</label>
+                  <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" step="0.01"
+                    min="0" th:field="*{precio}" required>
+                  <br>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                    <button type="reset" class="btn btn-primary">Cancelar</button>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+
+
             <div class="col-sm-2">
-
             </div>
-            <div class="col-sm-8">
-                <h2 class="text-center">Gestor de Usuario</h2>
-                <hr>
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-sm-12">
-                            <!-- Content -->
-                            <h3>Crear Habitacion Doble</h3>
-
-                            <div class="card">
-
-                                 <form th:object="${addHabitacionDob}" method="POST" action="#" th:action="@{/admin/gHabitaciones/gHabitacionesDoble/submit}">
-									
-									<label for="numPuerta">Numero de puerta:</label>
-                                    <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" min="0" th:field="*{numPuerta}" required>
-									
-									<label for="tipo">Nombre de habitacion:</label>
-									 <input class="form-control" type="text" id="tipo" name="tipo" placeholder="Doble"  th:field="*{tipo}" required>
-
-                                    
-                                    <label for="precio">Precio:</label>
-                                    <input class="form-control" type="number" id="precio" name="precio" placeholder="01.00" step="0.01" min="0" th:field="*{precio}" required>
-                                    <br>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Crear</button>
-                                        <button type="reset" class="btn btn-primary">Cancelar</button>
-                                    </div>
-                                </form>
-
-                            </div>
-
-                        </div>
-                       
-                        
-                        <div class="col-sm-2">
-                        </div>
-
-                        
 
 
-                    </div>
-                </div>
-            </div>
+
+
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
 
 
@@ -123,46 +130,46 @@
 
 
 
-    <!-- Pie -->
-    <footer class="float-left container-fluid">
+  <!-- Pie -->
+  <footer class="float-left container-fluid">
 
-        <div class="row">
-            <div class="col-sm-3">
-                <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
-            </div>
-            <div class="col-sm-6 ">
-                <p class="text-center" id="clk"></p>
-            </div>
-            <div class="col-sm-1">
-                <p class=" d-block"><a href="/contacto">Quienes somos</a></p>
-            </div>
-            <div class="col-sm-1">
-                <p class=" d-block"><a href="#">Política de datos</a></p>
-            </div>
-            <div class="col-sm-1">
-                <p class=" d-block"><a href="#">Aviso legal</a></p>
-            </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
+      </div>
+      <div class="col-sm-6 ">
+        <p class="text-center" id="clk"></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="/contacto">Quienes somos</a></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Política de datos</a></p>
+      </div>
+      <div class="col-sm-1">
+        <p class=" d-block"><a href="#">Aviso legal</a></p>
+      </div>
 
-        </div>
-    </footer>
-
-
+    </div>
+  </footer>
 
 
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
 
 </body>
