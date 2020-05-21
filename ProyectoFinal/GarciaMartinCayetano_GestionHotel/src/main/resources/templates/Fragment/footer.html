@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Footer</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<body>
+		<footer class="float-left container-fluid" th:fragment="pie">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="float-left d-block">© 2020 Hotel Lipo todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-6 ">
+                <p class="text-center" id="clk"></p>
+            </div>
+            <div class="col-sm-1">
+                <p class=" d-block"><a href="/contacto">Quienes somos</a></p>
+            </div>
+            <div class="col-sm-1">
+                <p class=" d-block"><a href="#">Política de datos</a></p>
+            </div>
+            <div class="col-sm-1">
+                <p class=" d-block"><a href="#">Aviso legal</a></p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

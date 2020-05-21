@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.gestionHotel.modelo.LineaReserva;
 import com.gestionHotel.modelo.Reserva;
 import com.gestionHotel.modelo.Usuario;
 import com.gestionHotel.servicios.ReservaServicio;
@@ -40,15 +41,20 @@ public class ReservaController {
 	public String reserva(Model model,@AuthenticationPrincipal Usuario u) {
 		model.addAttribute("listaReservas", reservaS.reservasUsuarios(u.getId()));
 		model.addAttribute("addReserva", new Reserva());
+		model.addAttribute("lineaReserva", new LineaReserva());
 		return "reserva";
 	}
 	
 	@PostMapping("/reserva/submit")
-	public String reservaForm(@ModelAttribute("addReserva") Reserva r,@AuthenticationPrincipal Usuario usu ) {		
+	public String reservaForm(@ModelAttribute("addReserva") Reserva r ,@AuthenticationPrincipal Usuario usu ) {		
 		r.setUsuario(usu);
 		reservaS.save(r);
+		
+		
 		return "redirect:/reserva";
 	}
+	
+	
 	
 	
 	

@@ -19,21 +19,13 @@ public class PlantillaActividadesControllerAdmin {
 		@Autowired
 		PlantillaActividadesServicio servicioPA;
 		
-		//lista
-		@GetMapping("/gestion-actividades-plantilla/list")
-		public String gActPList(Model u) {
-			u.addAttribute("listaActividadPlantilla",servicioPA.findAll());
-
-			return "/admin/gActividadesPlantillaLista";	
-		}
-		
-		
-		
+	
+	
 		//borrar
 		@GetMapping("/gestion-actividades-plantilla/borrar/{id}")
 		public String borrar(@PathVariable("id") long id) {
 			servicioPA.deleteById(id);
-			return "redirect:/admin/gestion-actividades-plantilla/list";
+			return "redirect:/admin/gestion-actividades-plantilla";
 		}
 		
 		
@@ -43,7 +35,7 @@ public class PlantillaActividadesControllerAdmin {
 		@GetMapping("/gestion-actividades-plantilla")
 		public String gActP(Model u) {
 			u.addAttribute("addPlantillaActividades", new PlantillaActividades());
-			
+			u.addAttribute("listaActividadPlantilla",servicioPA.findAll());
 			return "/admin/gActividadesPlantilla";
 		}
 		@PostMapping("/gestion-actividades-plantilla/submit")

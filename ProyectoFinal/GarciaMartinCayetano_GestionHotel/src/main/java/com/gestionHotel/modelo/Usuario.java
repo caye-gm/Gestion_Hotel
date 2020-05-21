@@ -35,11 +35,12 @@ public class Usuario implements UserDetails {
 	@Id
 	@GeneratedValue
 	private long id;
-	
+	@Column(unique = true) 
 	private String dni;
 	private String password;
+	@Column(unique = true) 
 	private String telefono;
-	
+	@Column(unique = true) 
 	private String email;
 	
 	@Column(unique = true) 
