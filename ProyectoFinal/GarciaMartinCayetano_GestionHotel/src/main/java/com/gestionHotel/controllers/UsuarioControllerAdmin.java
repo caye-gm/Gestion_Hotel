@@ -59,7 +59,7 @@ public class UsuarioControllerAdmin {
 			}
 		
 		 
-		 //editar perfil
+		 //editar mi propio perfil
 		    @GetMapping("/editar-usuario")
 			public String UsuarioEditar(Model m,@AuthenticationPrincipal Usuario u) {
 				m.addAttribute("usuario", servicio.findById(u.getId()));

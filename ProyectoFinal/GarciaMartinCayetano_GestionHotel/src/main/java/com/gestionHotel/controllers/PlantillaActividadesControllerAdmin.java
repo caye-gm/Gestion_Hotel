@@ -48,13 +48,5 @@ public class PlantillaActividadesControllerAdmin {
 		
 		
 		
-		
-		/*
-		@GetMapping("/gestion-actividades-plantilla")
-		public String RgActP(Model u) {
-			u.addAttribute("RemovePlantillaActividades", new PlantillaActividades());
-			
-			return "/admin/gActividadesPlantilla";
-		}*/
 	
 }
