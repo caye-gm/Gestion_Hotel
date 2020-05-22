@@ -6,13 +6,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Librerias extras -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+<script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
+
   <!-- Bootstrap CSS -->
-  <script src="https://kit.fontawesome.com/cbf25ca67e.js" crossorigin="anonymous"></script>
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="../css/Model.css" rel="stylesheet" type="text/css">
   <script src="../js/reloj.js"></script>
   <title>Hotel</title>
+  
+  
+  <script type="text/javascript">
+ 
+  function ValidarFechas()
+  {
+  var fechainicial = document.getElementById("fecha_entrada").value;
+  var fechafinal = document.getElementById("fecha_salida").value;
+
+  if(fechafinal.year > fechainicial.year || fechafinal.month > fechainicial.month || fechafinal.day > fechainicial.day)
+
+  alert("La fecha final debe ser mayor a la fecha inicial");
+
+  }
+  </script>
+  
+  
 </head>
 
 <body class="backgroundPan">
@@ -50,9 +71,9 @@
                   </div>
                   <div class="col-sm-4 ">
 
-                    <label for="fecha_entrada">Fecha de Entrada:</label>
-                    <input type="date" name="fecha_entrada" class="form-control" id="fecha_entrada"
-                      placeholder="Fecha de entrada" th:field="*{fecha_Salida}" required>
+                    <label for="fecha_salida">Fecha de Salida:</label>
+                    <input type="date" name="fecha_entrada" class="form-control" id="fecha_salida"
+                      placeholder="Fecha de salida" th:field="*{fecha_Salida}" required>
 
                   </div>
                   <div class="col-sm-4">

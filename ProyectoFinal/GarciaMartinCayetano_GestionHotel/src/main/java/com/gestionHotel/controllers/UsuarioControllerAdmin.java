@@ -1,6 +1,7 @@
 package com.gestionHotel.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,13 @@ public class UsuarioControllerAdmin {
 		@Autowired
 		UsuarioServicio servicio;
 	
+		//index app admin
+
+		@GetMapping("/")
+		public String Inicio() {
+			return "/admin/index";
+		}
+		//-----------
 	
 
 		@GetMapping("/gestion-usuarios")
@@ -41,53 +49,33 @@ public class UsuarioControllerAdmin {
 			servicio.deleteById(id);
 			return "redirect:/admin/gestion-usuarios";
 		}
+		//---------------------------------------------------
 		
-		
-		//editar
-		/*
-		@GetMapping("/editar/{id}")
-		public String mostrarFormularioEdicion(@PathVariable("id") long id, Model model) {
-		
-			//Buscamos el alumno por id (el recogido al pinchar en el enlace editar del alumno
-			//concreto que queremos editar
-			Usuario aEditar = servicio.findById(id);
-			//Añadimos al modelo la lista de todos los cursos
-			model.addAttribute("cursos", cursoServicio.findAll());
-			//Si el alumno buscado no es nulo lo pasamos al modelo y mostramos el fomrulario
-			//con los campos relleno (estamos editando)
-			if (aEditar != null) {
-				model.addAttribute("alumno", aEditar);
-				return "formulario";
-			} else {
-				// No existe ningún alumno con el Id proporcionado.
-				// Redirigimos hacia el listado de todos los alumnos
-				return "redirect:/";
+		//editarAdminUser
+		 @GetMapping("/editar-usuario/{id}")
+			public String AdminEditarUsuario(Model m,@PathVariable("id") long id) {
+				m.addAttribute("usuario", servicio.findById(id));
+				return "/admin/usuarioEditarAdmin";
 			}
+		
+		 
+		 //editar perfil
+		    @GetMapping("/editar-usuario")
+			public String UsuarioEditar(Model m,@AuthenticationPrincipal Usuario u) {
+				m.addAttribute("usuario", servicio.findById(u.getId()));
+				return "/admin/usuarioEditarAdmin";
+			}
+		    
+		    
+			@PostMapping("/editar-usuario/submit")
+			public String UsuarioEditarsubmit(@ModelAttribute("usuario") Usuario u) {
 			
-			
-		}
-		
-		
-		@PostMapping("/editar/submit")
-		public String procesarFormularioEdicion(@ModelAttribute("alumno") Alumno a) {
-			alumnoServicio.edit(a);
-			return "redirect:/";
-		}
-		
-		*/
-		
-		
-		//index admin
-		
-		@GetMapping("/")
-		public String Inicio() {
-			return "/admin/index";
-		}
-		
-		
-		
-	
-	
-	
+				servicio.cambiarPass(u);
+				servicio.edit(u);
+				
+				return "redirect:/admin/editar-usuario";
+			}
+		    
+
 	
 }

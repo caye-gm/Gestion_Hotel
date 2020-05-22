@@ -54,27 +54,35 @@ public class UsuarioController {
 		model.addAttribute("melistaActividad",servicioA.findAll());
 		System.out.println(u);
 		Actividad a1=servicioA.findById(id);
-		System.out.println(a1);
+	
 		
 				a1=u.findActivityByID(a1);
 		
-				u.removeActividad(a1);
-				
-				
+				u.removeActividad(servicioA.findById(id));
+
 				servicioU.edit(u);
 				servicioA.edit(a1);
 				
-				System.out.println(u);
-				System.out.println(a1);
+				
 		return "redirect:/actividad-usuario";
 	}
 	
 	
-	//------------------------------
-	@PostMapping("/actividad-usuario/submit/rm")
-	public String rmUsuarioActividad(@AuthenticationPrincipal Usuario u,@ModelAttribute("rmActividad") Actividad act) {
-	u.removeActividad(act);
-	return "redirect:/actividad-usuario";
-}
+	
+	
+	
+	@GetMapping("/editar-usuario")
+	public String UsuarioEditar(Model m,@AuthenticationPrincipal Usuario u) {
+		m.addAttribute("usuario", servicioU.findById(u.getId()));
+		return "usuarioEditar";
+	}
+	@PostMapping("/editar-usuario/submit")
+	public String UsuarioEditarsubmit(@ModelAttribute("usuario") Usuario u) {
+	
+		servicioU.cambiarPass(u);
+		servicioU.edit(u);
+		
+		return "redirect:/usuarioEditar";
+	}
 	
 }

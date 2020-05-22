@@ -98,6 +98,7 @@
                         <th>Telefono</th>
                         <th>Admin</th>
                         <th>Borrar</th>
+                        <th>Editar</th>
                     </thead>
                     <tbody>
                       <tr th:each="usuario : ${listaUsuario}">
@@ -107,8 +108,8 @@
                         <td th:text="${usuario.email}">Email</td>
                         <td th:text="${usuario.telefono}">Teléfono</td>
                         <td th:text="${usuario.admin}">Admin</td>
-                        <td><a href="#" th:href="@{/admin/gestion-usuarios/borrar/{id}(id=${usuario.id})}"><i
-                              class="fa fa-times"></i></a></td>
+                        <td><a href="#" th:href="@{/admin/gestion-usuarios/borrar/{id}(id=${usuario.id})}"><i class="fa fa-times"></i></a></td>
+                        <td><a href="#" th:href="@{/admin/editar-usuario/{id}(id=${usuario.id})}"><i class="far fa-edit"></i></a></td>
                       </tr>
 
                     </tbody>

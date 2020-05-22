@@ -20,9 +20,15 @@ public class UsuarioServicio extends BaseService<Usuario, Long, UsuarioRepositor
 		return repositorio.findFirstByUsername(usuario);
 	}
 	
-	public Usuario registrar(Usuario u) {
+	public Usuario registrar(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		u.setPassword(encoder.encode(u.getPassword()));
-		return repositorio.save(u);
+		usuario.setPassword(encoder.encode(usuario.getPassword()));
+		return repositorio.save(usuario);
+	}
+	public void cambiarPass(Usuario usuario) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		usuario.setPassword(encoder.encode(usuario.getPassword()));
+	
+	
 	}
 }

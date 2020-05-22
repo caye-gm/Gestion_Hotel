@@ -36,6 +36,10 @@ public class Actividad {
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(mappedBy="actividades",fetch = FetchType.EAGER)
+	
+
+	
+	
 	private List<Usuario> usuarios = new ArrayList<Usuario>();
 
 	public Actividad(LocalDate horaInicio, List<Usuario> usuarios) {

@@ -32,7 +32,7 @@ public class GarciaMartinCayetanoGestionHotelApplication {
 			u.setAdmin(false);
 			u.setUsername("user");
 			u.setEmail("luismi.lopez@email.com");
-			u.setPassword(passwordEncoder.encode("user"));
+			u.setPassword(passwordEncoder.encode("1234"));
 			
 			Usuario u1 = new Usuario();
 			u1.setAdmin(false);
