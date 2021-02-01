@@ -1,4 +1,4 @@
-# ProyectoFinal
+# Proyecto Fin de 1ºDAM
 Proyecto final 1ºDAM
 
 Realizado por Cayetano García
@@ -27,23 +27,6 @@ quedando reflejado .
 -Por tema de tiempo y desconocimiento al desarrollar la plantilla , pudiera ver usado listas las cuales serian mucho mas 
 practicas , evitaria tantos formularios realizandolo de manera mas estetica y sobre una misma lista realizar los nuevos 
 objetos(usuarios,habitaciones,actividaades...).
-
-
-### **Puntos a mejorar respecto a picar codigo:**
-
--Nombres a mejorar.
-
--Codigo mas estructurado.
-
--Argumentar codigo
-
-Puntos negativos:
-
--Uso de una sola consulta , esto aumentara cuando consiga realizar l linea de reserva , que por supuesto se va a desarrollar.
-
--Optimizacion del codigo podria ser siempre mejor.
-
--Validaciones de formularios por ejemplo al reservar deja poner fechas que no se deberian(falta de tiempo , seria mas de tema jquery ,javascript...).
 
 
 ## **Datos**
