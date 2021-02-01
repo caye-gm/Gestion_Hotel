@@ -9,9 +9,6 @@ El administrador por su parte se encargará de la gestión de usuarios,reservas,
 Los usuarios podran realizar reservas y apuntarse a actividades
 
 
-## **Estado del proyecto**
----------------------------
-
 ## **Datos**
 
  
